@@ -1,7 +1,9 @@
+
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import Link from 'next/link';
-import Logout from '../Logout/Logout';
+import LogoutBtn from '../LogoutBtn/LogoutBtn';
 import LoginBtn from '../LoginBtn/LoginBtn';
+
 const Header = async () => {
     const {isAuthenticated} = getKindeServerSession()
     const isUserAuthenticated = await isAuthenticated()
@@ -18,7 +20,7 @@ const Header = async () => {
                 <div className='flex gap-2'>
                     {
                         isUserAuthenticated ? <>
-                        <Logout></Logout>
+                        <LogoutBtn></LogoutBtn>
                         </>
                         :
                         <>

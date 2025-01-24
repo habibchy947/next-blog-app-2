@@ -1,6 +1,8 @@
+
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import Link from 'next/link';
-import React from 'react';
+import Logout from './Logout/Logout';
+import LoginBtn from './LoginBtn/LoginBtn';
 
 const Header = async () => {
     const {isAuthenticated} = getKindeServerSession()
@@ -9,7 +11,7 @@ const Header = async () => {
     return (
         <div className="navbar w-full bg-slate-100">
             <div className="flex-1">
-                <a className="btn btn-ghost text-xl">Bolgger</a>
+                <a className="btn btn-ghost text-xl">Blogger</a>
             </div>
             <div className="flex-none">
                 <ul className="menu menu-horizontal px-1">
@@ -19,11 +21,11 @@ const Header = async () => {
                 <div className='flex gap-2'>
                     {
                         isUserAuthenticated ? <>
-                        <button className='btn btn-primary'><Link href='/api/auth/logout'>LogOut</Link></button>
+                        <Logout></Logout>
                         </>
                         :
                         <>
-                        <button className='btn btn-primary'><Link href='/api/auth/login'>Login</Link></button>
+                        <LoginBtn></LoginBtn>
                         </>
                     }
                 </div>

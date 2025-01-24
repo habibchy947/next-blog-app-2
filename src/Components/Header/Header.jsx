@@ -1,15 +1,16 @@
 
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import Link from 'next/link';
-import Logout from './Logout/Logout';
-import LoginBtn from './LoginBtn/LoginBtn';
+import Logout from '../Logout/Logout';
+import LoginBtn from '../LoginBtn/LoginBtn';
+
 
 const Header = async () => {
     const {isAuthenticated} = getKindeServerSession()
     const isUserAuthenticated = await isAuthenticated()
     console.log(isUserAuthenticated)
     return (
-        <div className="bg-slate-100 px-5 py-3 flex items-center justify-between">
+        <div className="bg-slate-100 lg:w-11/12 mx-auto px-5 py-3 flex items-center justify-between">
             <div className="">
                 <a className="text-xl">Blogger</a>
             </div>
